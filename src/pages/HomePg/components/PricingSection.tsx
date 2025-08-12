@@ -35,7 +35,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   buttonText,
 }) => {
   return (
-    <div className="bg-white border-y-2 border-black rounded-lg shadow-lg p-6 flex flex-col items-start transform transition duration-300 hover:scale-105" data-aos="zoom-in-down">
+    <div className="bg-white border-y-2 border-black rounded-lg shadow-lg p-6 flex flex-col items-start transform transition duration-300 hover:scale-105">
       <div className="flex flex-col justify-center items-center w-full">
        <h3 className="text-2xl font-semibold text-gray-800 mb-2 text-center font-[Jost]">{plan}</h3>
       <p className="text-2xl font-bold text-gray-900 mb-4 font-[Jost]">${Number(price).toLocaleString()}</p> 
@@ -67,7 +67,13 @@ const PricingSection = () => {
       hprice: 999,
       roi: 20,
       description: "Free plan for all users.",
-      features: ["2 Workspaces", "10 collaborators", "Unlimited data", "Unified Analytics"],
+      features: ["97% AI Precision",
+"24/7 Live Support",
+"Core Market Trends",
+"Affordable Service Rates",
+"Monthly Market Review",
+"Community Discussion Hub",
+"Mobile App Assistance"],
       buttonText: "Get Started",
       buttonLink: "/login",
       imageSrc: "/src/assets/logo_light.png",
@@ -78,7 +84,15 @@ const PricingSection = () => {
       hprice: 1999,
       roi: 25,
       description: "Ideal for small businesses.",
-      features: ["Unlimited workspaces", "Unlimited collaboration", "15 GB data storage", "Unified Analytics", "Mobile app access"],
+      features: [
+        "98% AI Precision",
+"Detailed Market Trends",
+"Member Savings Program",
+"Learning Support Tools",
+"Weekly Market Review",
+"Investor Network Entry",
+"Strengthened Data Protection"
+      ],
       buttonText: "Get Started",
       buttonLink: "#",
       imageSrc: "/src/assets/logo_light.png",
@@ -89,7 +103,13 @@ const PricingSection = () => {
       hprice: 4999,
       roi: 30,
       description: "Works best for enterprise companies.",
-      features: ["Unlimited workspaces", "Unlimited collaboration", "Unlimited data storage", "Time tracking module", "Unified Analytics", "HR & Payroll"],
+      features: ["99% AI Precision",
+"Longer Support Availability",
+"Elite Market Analysis",
+"Lower Transaction Costs",
+"Custom Investment Plans",
+"Members-Only Sessions",
+"Adjustable Payout Methods"],
       buttonText: "Get Started",
       buttonLink: "#",
       imageSrc: "/src/assets/logo_light.png",
@@ -100,7 +120,17 @@ const PricingSection = () => {
       roi: 35,
       hprice: 10000,
       description: "For large-scale enterprises.",
-      features: ["All Enterprise features", "Dedicated support", "Custom integrations", "Advanced security", "SLA"],
+      features: [ "99.5% AI Precision",
+
+"Fast-Track Assistance",
+
+"Premium Market Analysis",
+
+"No Transaction Costs",
+"Personal Account Advisor",
+"Elite Event Access",
+"Tailored Investment Plan",
+"Priority Opportunity Entry"],
       buttonText: "Get Started",
       buttonLink: "#",
       imageSrc: "/src/assets/logo_light.png",

@@ -3,6 +3,9 @@ import ContactFaq from "./ContactFaq";
 import TestimonialSection from "./Testimonial";
 import PricingSection from "./PricingSection";
 import Footer from "./Footer";
+import { Testimony } from "./Testimony";
+import Navbar from "./Navbar";
+import { useRef } from "react";
 
 const FirstBody = () => {
   const servicesItems = [
@@ -27,8 +30,68 @@ const FirstBody = () => {
       text: "We offer international investment opportunities with localized support and insights to suit your market preferences."
     }
   ]
+
+// Package
+  const PackRef = useRef<any>(null)
+
+  const scrollToPack = () => {
+    PackRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
+// AboutRef
+  const AboutRef = useRef<any>(null)
+
+  const scrollToAbout = () => {
+    AboutRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
+
+  const ServicesRef = useRef<any>(null)
+
+  const scrollToServices = () => {
+    ServicesRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
+  const ContactRef = useRef<any>(null)
+
+  const scrollToContact = () => {
+    ContactRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
+  const TestyRef = useRef<any>(null)
+
+  const scrollToTesty = () => {
+    TestyRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
   return (
-    <div className="relative  text-black overflow-hidden">
+    <div className="overflow-hidden">
+      <Navbar AboutRef={scrollToAbout} ServicesRef={scrollToServices} PackagesRef={scrollToPack} TestimonialsRef={scrollToTesty} ContactRef={scrollToContact}/>
+      <div id="about" ref={AboutRef}>
+           <div className="h-[100vh] bg-heroimgone bg-center bg-opacity-50 bg-cover flex justify-center items-center align-middle w-full ">
+                <div className="flex justify-center items-center backdrop-brightness-50 border-l-indigo-900 w-full h-full text-white">
+                <div className="md:w-2/3 w-full flex flex-col gap-4 justify-center items-center">
+                  <h3 className="text-xl md:text-4xl text-center font-[Jost]">SECURE YOUR FUTURE WITH SMART REAL ESTATE INVESTMENT - HIGH RETURNS, ZERO RISK AND LASTING VALUE</h3>
+
+                    <p className="text-center md:text-lg text:sm">Discover a smarter way to build wealth through carefully selected real estate opportunities. Our investment options are designed to deliver strong returns with minimal risk, backed by expert insights and market research.</p>
+                    <Link to="/register">
+                    <button className="bg-neutral-900 border border-gray-100 rounded-lg px-4 py-2">Get Started</button>
+                    </Link>
+                    
+                </div>
+              </div>
+               
+            </div>
       {/* Oil and Gas */}
 
       <div
@@ -39,21 +102,25 @@ const FirstBody = () => {
         <div className="absolute top-0 right-0 w-full h-full  "></div>
 
         {/* Hero Content */}
+        
         <div className="flex justify-center items-center backdrop-brightness-50 border-l-indigo-900 w-full h-full text-white" >
-          <div className="md:w-2/3 w-full flex flex-col gap-4 justify-center items-center">
-            <h3 className="text-xl md:text-4xl text-center font-[Jost] uppercase" data-aos="zoom-in-down">
+          <div className="container">
+           <div className="md:w-2/3 mx-auto w-full flex flex-col gap-4 justify-center items-center">
+            <h3 className="text-xl md:text-4xl text-center font-[Jost] uppercase">
               Secure Strong Returns in One of the World’s Most Profitable Sectors.
             </h3>
 
-            <p className="text-center md:text-lg text:sm" data-aos="zoom-in-down">
+            <p className="text-center md:text-lg text:sm" >
               Step into a powerful asset class that continues to deliver consistent, above-market returns. Our oil and gas investment opportunities give you direct access to energy projects with real-world impact and long-term income potential.
             </p>
-            <Link to="/register" data-aos="zoom-in-down">
+            <Link to="/register" >
               <button className="bg-neutral-900 border border-gray-100 rounded-lg px-4 py-2">
                 Get Started
               </button>
             </Link>
+          </div> 
           </div>
+          
         </div>
       </div>
       
@@ -70,21 +137,24 @@ const FirstBody = () => {
 
         {/* Hero Content */}
          <div className="flex justify-center items-center backdrop-brightness-50 border-l-indigo-900 w-full h-full text-white">
-          <div className="md:w-2/3 w-full flex flex-col gap-4 justify-center items-center">
-            <h3 className="text-xl md:text-4xl text-center font-[Jost] uppercase" data-aos="zoom-in-down">
+          <div className="container">
+          <div className="md:w-2/3 mx-auto w-full flex flex-col gap-4 justify-center items-center">
+            <h3 className="text-xl md:text-4xl text-center font-[Jost] uppercase">
               Build Wealth with Bitcoin: The Future of Digital Investment
 Secure, Scarce, and High-Growth
             </h3>
 
-            <p className="text-center md:text-lg text:sm" data-aos="zoom-in-down">
+            <p className="text-center md:text-lg text:sm">
               Bitcoin has proven itself as the most powerful digital asset of the decade — delivering exceptional returns, global adoption, and long-term value. Now is the time to position your portfolio for the future of finance.
             </p>
-            <Link to="/register" data-aos="zoom-in-down">
+            <Link to="/register">
               <button className="bg-neutral-900 border border-gray-100 rounded-lg px-4 py-2">
                 Get Started
               </button>
             </Link>
+          </div>  
           </div>
+          
         </div>
       </div> 
 
@@ -98,26 +168,32 @@ Secure, Scarce, and High-Growth
 
         {/* Hero Content */}
          <div className="flex justify-center items-center backdrop-brightness-50 border-l-indigo-900 w-full h-full text-white">
-          <div className="md:w-2/3 w-full flex flex-col gap-4 justify-center items-center">
-            <h3 className="text-xl md:text-4xl text-center font-[Jost] uppercase" data-aos="zoom-in-down">
+          <div className="container">
+           <div className="md:w-2/3 mx-auto w-full flex flex-col gap-4 justify-center items-center">
+            <h3 className="text-xl md:text-4xl text-center font-[Jost] uppercase">
               Invest in Agriculture. Earn Strong Returns.
             </h3>
 
-            <p className="text-center md:text-lg text:sm" data-aos="zoom-in-down">
+            <p className="text-center md:text-lg text:sm">
               Grow Your Wealth by Investing in the Future of Sustainable Farming
 Unlock consistent returns and long-term value by investing in high-performing agricultural projects.
             </p>
-            <Link to="/register" data-aos="zoom-in-down">
+            <Link to="/register">
               <button className="bg-neutral-900 border border-gray-100 rounded-lg px-4 py-2">
                 Get Started
               </button>
             </Link>
+          </div> 
           </div>
+          
         </div>
+      </div>     
       </div>
 
+
       {/* Services */}
-      <div className="container">
+      <div id="services" ref={ServicesRef} >
+        <div className="container">
         <h3 className="py-6 text-2xl md:text-4xl font-[Jost] font-[600] text-center">Services</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-12 pt-4 pb-8">
           {servicesItems.map((item:any, index) => (
@@ -137,11 +213,28 @@ Unlock consistent returns and long-term value by investing in high-performing ag
           
         </div>
       </div>
-
-      <PricingSection />
-      <TestimonialSection />
-
-      <ContactFaq />
+      </div>
+      <div id="packages" ref={PackRef}>
+       <PricingSection /> 
+      </div>
+      
+      
+      <div id="testimonials" ref={TestyRef}>
+        <div>
+          {window.innerWidth < 768 ? (
+            <TestimonialSection />
+          ) : ( 
+            <Testimony />
+            // <h1 className="text-center text-3xl py-4">Register Now</h1>
+          )}
+        </div>
+        
+      </div>
+      
+      <div id="contact" ref={ContactRef}>
+       <ContactFaq /> 
+      </div>
+      
 
 
       {/* Footer Section */}

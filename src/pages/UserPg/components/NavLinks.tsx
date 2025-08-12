@@ -50,7 +50,7 @@ const NavLinks = ({ children }: any) => {
 
   return (
     <div className="flex flex-row">
-      <div className="w-60 h-screen fixed bg-[#2a2f42] text-white shadow-lg py-4">
+      <div className="w-60 h-screen fixed bg-black text-white shadow-lg py-4">
         <div className="">
           <Link to="/">
           <img src={logolight} alt="" />

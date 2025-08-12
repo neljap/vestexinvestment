@@ -10,10 +10,16 @@ interface TestimonialCardProps {
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, title, image }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-8 mx-4 flex flex-col items-center text-center">
-      <img src={image} alt={name} className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-indigo-500" />
+      
       <p className="text-lg text-gray-700 italic mb-6">"{quote}"</p>
-      <h4 className="text-xl font-semibold text-gray-800">{name}</h4>
+      <div className="flex items-center gap-3 justify-center w-full">
+        <img src={image} alt={name} className="w-12 h-12 rounded-full object-cover mb-6 border border-indigo-500" />
+        <div>
+          <h4 className="text-xl font-semibold text-gray-800">{name}</h4>
       <p className="text-gray-600 text-sm">{title}</p>
+        </div>
+      </div>
+      
     </div>
   );
 };
@@ -55,11 +61,11 @@ const TestimonialSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToNext = () => {
+  () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
-  const goToPrevious = () => {
+  () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   };
 
@@ -68,12 +74,12 @@ const TestimonialSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">What Our Clients Say</h2>
         <div className="relative flex items-center justify-center">
-          <button
+          {/* <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-3 bg-white rounded-full shadow-md hover:bg-gray-200 focus:outline-none transition duration-300"
+            className="absolute left-0 z-10 p-1 bg-white rounded-full shadow-md hover:bg-gray-200 focus:outline-none transition duration-300"
           >
             <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-          </button>
+          </button> */}
           <div className="overflow-hidden w-full">
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -86,12 +92,12 @@ const TestimonialSection = () => {
               ))}
             </div>
           </div>
-          <button
+          {/* <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-3 bg-white rounded-full shadow-md hover:bg-gray-200 focus:outline-none transition duration-300"
+            className="absolute right-0 z-10 p-1 bg-white rounded-full shadow-md hover:bg-gray-200 focus:outline-none transition duration-300"
           >
             <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-          </button>
+          </button> */}
         </div>
         <div className="flex justify-center mt-8 space-x-2">
           {testimonials.map((_, index) => (

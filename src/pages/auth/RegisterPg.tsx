@@ -25,7 +25,7 @@ const RegisterPg = () => {
 
 
   useEffect(() => {
-    document.title = "Spectrum Capitals | Register"
+    document.title = "Vestex Investment | Register"
   }, [])
 
   // 6LfSrWIqAAAAAIMSOloTNvjoR0GdSh9ZMtBmdY7-
@@ -53,7 +53,7 @@ const RegisterPg = () => {
           number,
         };
         await axios.post(
-          "http://localhost:5173/api/user/register",
+          "http://localhost:5000/api/users/register",
           regdata
         );
 

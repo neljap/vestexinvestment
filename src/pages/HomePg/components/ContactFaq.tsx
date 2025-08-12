@@ -73,7 +73,7 @@ const ContactFaq = () => {
             {/* FAQ Items */}
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in-down">
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   <button
                     className="w-full flex justify-between items-center p-6 text-lg font-semibold text-gray-800 focus:outline-none"
                     onClick={() => toggleFaq(index)}
@@ -102,7 +102,7 @@ const ContactFaq = () => {
           </div>
 
           {/* Right Section - Contact Form */}
-          <div className="w-full lg:w-1/2 mt-12 lg:mt-0 bg-white p-8 rounded-lg shadow-lg" data-aos="zoom-in-down">
+          <div className="w-full lg:w-1/2 mt-12 lg:mt-0 bg-white p-8 rounded-lg shadow-lg" >
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Still have questions?</h2>
             <p className="text-gray-600 mb-8">We want to hear from you</p>
             <form className="space-y-6" onSubmit={handleSubmit}>
