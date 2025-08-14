@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import { homelogo } from "../../../assets"
 
 
 const Footer = () => {
@@ -8,12 +10,16 @@ const Footer = () => {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       {/* Company Info */}
       <div className="space-y-4">
-        <div className="flex items-center">
-          <svg className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-          <span className="ml-2 text-xl font-bold">Vertex Investment</span>
-        </div>
+        <div className="flex items-start justify-start gap-1">
+            <img src={homelogo} alt="" className="w-12"/>
+            <Link
+              to="/"
+              className="text-lg text-start leading-4 font-bold text-black pt-2 "
+            >
+              <h1 className="text-white font-[Jost]">VESTEX</h1>
+              <p className="text-white font-[Jost]">INVESTMENT</p>
+            </Link>
+          </div>
         <p className="text-gray-400">Building innovative solutions for the modern world.</p>
         <div className="flex space-x-4">
           <a href="#" className="text-gray-400 hover:text-white transition">

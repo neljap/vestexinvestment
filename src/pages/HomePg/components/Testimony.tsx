@@ -5,38 +5,38 @@ import { FaFacebook, FaInstagram, FaReddit } from "react-icons/fa6";
 const TestimonialData = [
   {
     id: 1,
-    name: "Victor",
-    title: "Software Developer",
+    name: "Sophia Carter",
+    title: "Retiree",
     social: "Twitter",
     icon: <FaTwitter />,
-    text: "Grateful to Oasis Trade Hub for their outstanding service, consistent support, and intuitive, feature-rich platform that delivers reliability, expert guidance, and an exceptional user experience.",
+    text: "I took a leap of faith and invested in this company a year ago, and I couldn't be happier. My returns have exceeded my expectations, and their customer service is always top-notch. Definitely worth the investment!",
     img: "https://picsum.photos/101/101",
   },
   {
     id: 2,
-    name: "Satya Nadella",
-    title: "Software Engineer",
+    name: "Ethan Walker",
+    title: "Business Owner",
     social: "Facebook",
     icon: <FaFacebook />,
-    text: "I’m grateful to Oasis Trade Hub for their exceptional support, guidance, and a user-friendly, reliable platform packed with valuable features and expert knowledge since I joined.",
+    text: "Honestly, I was skeptical at first, but after seeing the consistent growth in my portfolio, I’m sold. The team is knowledgeable and genuinely cares about your success. I’m looking forward to future investments with them.",
     img: "https://picsum.photos/102/102",
   },
   {
     id: 3,
-    name: "Virat Kohli",
-    title: "Project Manager",
+    name: "Olivia Davis",
+    title: "Entrepreneur",
     social: "Reddit",
     icon: <FaReddit />,
-    text: "I appreciate Oasis Trade Hub’s outstanding service; from day one, they’ve delivered unwavering support and guidance through a robust, user-friendly platform, rich in expert features.",
+    text: "After researching several options, I chose this company, and it’s been a game-changer. Their transparent communication and solid results have made me feel confident in my financial future. Highly recommend!",
     img: "https://picsum.photos/104/104",
   },
   {
     id: 4,
-    name: "Sachin Tendulkar",
-    title: "Data Scientist",
+    name: "Liam Thompson",
+    title: "Engineer",
     social: "Instagram",
     icon: <FaInstagram />,
-    text: "Grateful to Oasis Trade Hub for their outstanding service—offering consistent support, expert guidance, and a robust, user-friendly platform filled with valuable tools and professional insight.",
+    text:  "I’ve made some smart moves with this company. Their team is responsive, professional, and they really know what they’re doing. My investment has paid off, and I’m excited about what’s next.",
     img: "https://picsum.photos/103/103",
   },
 ];
@@ -51,7 +51,7 @@ export const Testimony = () => {
     slidesToScroll: 1,
     // centerMode: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3500,
     cssEase: "linear",
     pauseOnHover: true,
     pauseOnFocus: true,
@@ -142,13 +142,12 @@ export const Testimony = () => {
 <div className="my-6">
                 <div
                   key={data.id}
-                  className="flex flex-col gap-2 shadow-lg py-4 px-6 mx-4 rounded-xl  bg-[#ededed] relative min-h-[220px] justify-start items-start"
+                  className="flex flex-col gap-2 shadow-lg pb-4 pt-8 px-6 mx-4 rounded-xl  bg-[#ededed] relative min-h-[220px] justify-start items-start"
                 >
-                  <div className="flex flex-row gap-2 items-center">
+                  {/* <div className="flex flex-row gap-2 items-center">
                     {data.icon}
-              {/* <FaTwitter /> */}
               <p className="font-[500]">{data.social}</p>
-            </div>
+            </div> */}
             <div>
               <p className="leading-5">{data.text}</p>
             </div>

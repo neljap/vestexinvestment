@@ -57,7 +57,25 @@ const FirstBody = () => {
     <div className="overflow-hidden">
       <Navbar AboutRef={scrollToAbout} ServicesRef={scrollToServices} PackagesRef={scrollToPack} TestimonialsRef={scrollToTesty} ContactRef={scrollToContact}/>
       <div id="about" ref={AboutRef}>
-            <div className="h-[100vh] bg-heroimgone bg-center bg-opacity-50 bg-cover flex justify-center items-center align-middle w-full ">
+            <div className="h-[75vh] bg-black text-neutral-100 ">
+                <div className="container">
+                <div className="w-full md:w-2/3 justify-center items-center flex flex-col gap-4 pt-16 text-center font-[600] mx-auto">
+                <h2 className="font-[Jost] text-lg md:text-3xl">Welcome to Vestex Investment – Your Trusted Partner in High-Yield Investments</h2>
+<p>At Vestexinvestment, we specialize in diversified asset trading, offering you a smarter way to grow your wealth. Our expertise spans across high-potential markets including real estate, Bitcoin and cryptocurrency trading, agriculture investment, and oil & gas ventures. Backed by a team of experienced analysts and traders, we strategically trade these assets on behalf of our investors to deliver consistent, high-yield returns.</p>
+
+<p>We offer investors up to 35% profit returns, leveraging cutting-edge trading technologies and market insights to maximize performance while minimizing risk. Your capital is not only managed with care—it is secured and backed by government policies, ensuring an added layer of protection and peace of mind.</p>
+
+<p>Whether you're a seasoned investor or just starting your investment journey, Vestexinvestment provides a reliable, transparent, and secure platform to help your money work harder for you.</p>
+<Link to="/register">
+<button className="bg-green-600 py-2 px-6  rounded text-neutral-100 border border-green-200">Get Started Today.</button>
+</Link>
+
+                </div>
+                </div>
+               
+            </div>
+      {/* Oil and Gas */}
+    <div className="h-[100vh] bg-heroimgone bg-center bg-opacity-50 bg-cover flex justify-center items-center align-middle w-full ">
                 <div className="flex justify-center items-center backdrop-brightness-50 border-l-indigo-900 w-full h-full text-white">
                 <div className="md:w-2/3 w-full flex flex-col gap-4 justify-center items-center">
                   <h3 className="text-xl md:text-4xl text-center font-[Jost]">SECURE YOUR FUTURE WITH SMART REAL ESTATE INVESTMENT - HIGH RETURNS, ZERO RISK AND LASTING VALUE</h3>
@@ -71,8 +89,6 @@ const FirstBody = () => {
               </div>
                
             </div>
-      {/* Oil and Gas */}
-
       <div
         className="relative h-[600px] bg-cover bg-center"
         style={{ backgroundImage: "url('/oil-gas-bg.jpg')" }}

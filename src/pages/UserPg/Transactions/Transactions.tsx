@@ -71,7 +71,7 @@ const Transactions = () => {
           </div>
 
           {/* Monthly Earning Card - Placeholder */}
-          <div className="bg-dashcont text-neutral-100 rounded-lg shadow p-6">
+          <div className=" text-neutral-100 rounded-lg shadow p-6 " >
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Monthly Earning</h2>
             <p className="text-neutral-100 mb-2">This month</p>
             <div className="flex items-center justify-between mb-4">
@@ -109,7 +109,7 @@ const Transactions = () => {
             <div className="bg-dashcont text-neutral-100 rounded-lg shadow p-6 flex items-center justify-between">
               <div>
                 <p className="text-gray-500">Account Balance</p>
-                <p className="text-2xl font-bold">$1,235</p>
+                <p className="text-2xl font-bold">${data ? Number(data?.tAmount).toLocaleString() : 0}</p>
               </div>
               <div className="bg-blue-100 p-3 rounded-full">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M12 15h.01"></path></svg>
@@ -120,7 +120,7 @@ const Transactions = () => {
             <div className="bg-dashcont text-neutral-100 rounded-lg shadow p-6 flex items-center justify-between">
               <div>
                 <p className="text-gray-500">Total Deposit</p>
-                <p className="text-2xl font-bold">$35,723</p>
+                <p className="text-2xl font-bold">${data ? Number(data?.tDeposit).toLocaleString() : 0}</p>
               </div>
               <div className="bg-blue-100 p-3 rounded-full">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0zm-4 4h.01"></path></svg>
@@ -131,7 +131,7 @@ const Transactions = () => {
             <div className="bg-dashcont text-neutral-100 rounded-lg shadow p-6 flex items-center justify-between">
               <div>
                 <p className="text-gray-500">Total Withdraw</p>
-                <p className="text-2xl font-bold">$16.2</p>
+                <p className="text-2xl font-bold">${data ? Number(data?.twithd).toLocaleString() : 0}</p>
               </div>
               <div className="bg-blue-100 p-3 rounded-full">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>

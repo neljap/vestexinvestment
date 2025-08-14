@@ -16,3 +16,5 @@ export {default as paypalImg} from "./paypal.jpg";
 export {default as venmoImg} from "./venmo.jpg";
 export {default as zelleImg} from "./zelle.jpg";
 export {default as profilebar} from "./profile.jpg";
+export {default as homelogo} from "./logoinc.png"
+export {default as dashImg} from "./download.jpeg";

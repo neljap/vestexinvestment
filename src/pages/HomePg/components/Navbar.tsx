@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
+import { homelogo } from "../../../assets";
 
 interface NavRefTypes {
   AboutRef: any;
@@ -129,22 +130,10 @@ const Navbar = ({
       <div className="flex items-center font-medium justify-around">
         <div className="z-20 p-5 md:w-auto w-full flex justify-between">
           <div className="flex items-center justify-center gap-1">
-            <svg
-              className="h-8 w-8 text-gray-800"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-              />
-            </svg>
+            <img src={homelogo} alt="" className="w-12"/>
             <Link
               to="/"
-              className="text-lg text-center leading-4 font-bold text-black "
+              className="text-lg text-start leading-4 font-bold text-black "
             >
               <h1 className="text-black font-[Jost]">VESTEX</h1>
               <p className="text-black font-[Jost]">INVESTMENT</p>

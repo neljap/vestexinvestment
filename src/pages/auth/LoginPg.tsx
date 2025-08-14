@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { signInbro } from "../../assets";
 // import { hosturl } from "../../utils/ApiFeatures";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import { baseUrl } from "../../utils";
 // import {ThreeDots} from "react-loader-spinner"
 
@@ -22,7 +22,7 @@ const LoginPg = () => {
   //   setIsRecapVerify(true)
   // }
   // const [loadingSpin, setLoadingSpin] = useState(true);
-  const [recapState, setRecapState] = useState(null);
+  // const [recapState, setRecapState] = useState(null);
 
   // Site Key: 6Ld0eJ8rAAAAADUUC_gy1tmnwLo6zPVEKMKYhx8K
   // Secret Key: 6Ld0eJ8rAAAAAFJBeXVJD-K5gGPMdKi83KO6A6KG
@@ -41,10 +41,10 @@ const LoginPg = () => {
     //     })
     //     return;
     // }
-    if(recapState == null){
-      toast.error("Confirm that you're not a robot", {position: "bottom-left"})
-      return;
-    }
+    // if(recapState == null){
+    //   toast.error("Confirm that you're not a robot", {position: "bottom-left"})
+    //   return;
+    // }
     setLoading(true);
 
     const formData = { email, password };
@@ -134,7 +134,7 @@ const LoginPg = () => {
               </div>
             </div>
             <div>
-              <ReCAPTCHA sitekey="6LeKDaYrAAAAAO4BjX-HruRldCOPN1Px8TyqeYnq" onChange={(val : any) => setRecapState(val)} />
+              {/* <ReCAPTCHA sitekey="6LeKDaYrAAAAAO4BjX-HruRldCOPN1Px8TyqeYnq" onChange={(val : any) => setRecapState(val)} /> */}
             </div>
             <div className="flex flex-col gap-2 mt-1">
               <div>

@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-import { avatarImg } from "../../../assets";
+import { homelogo, profilebar } from "../../../assets";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import UserRespNav from "./UserRespNav";
 import { AuthContext } from "../../../app/AuthContext";
+import { Link } from "react-router-dom";
 
 const TopNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,13 @@ const TopNav = () => {
   return (
     <>
       <div className="flex justify-between items-center w-full bg-dashcont p-4 shadow">
-        <div></div>
+        <Link to="/" className="flex md:hidden items-center justify-start ps-4 gap-1 text-neutral-100">
+          <img src={homelogo} className="w-8" alt="" />
+          <div>
+            <p className="font-[600] font-[Jost]  leading-4">Vestex</p>
+            <p className="font-[600] font-[Jost] leading-4">Investment</p>
+          </div>
+          </Link>
         <div className="hidden md:flex items-center space-x-4">
           <div
             className="flex items-center space-x-2 cursor-pointer"
@@ -63,7 +70,7 @@ const TopNav = () => {
           >
             <div className="rounded-full shadow">
               <img
-                src={avatarImg}
+                src={data?.profilePics == "" ?  profilebar : data?.profilePics}
                 alt="User Avatar"
                 className="w-10 h-10 rounded-full"
               />
@@ -77,14 +84,14 @@ const TopNav = () => {
                           {showNavMenu ? (
                             <HiMenuAlt1
                               onClick={togNavMenu}
-                              className={`cursor-pointer transition-all text-primary`}
-                              size={30}
+                              className={`cursor-pointer transition-all text-neutral-100 text-lg`}
+                              size={40}
                             /> 
                           ) : (
                             <HiMenuAlt3
                               onClick={togNavMenu}
-                              className={`cursor-pointer transition-all text-primary`}
-                              size={30}
+                              className={`cursor-pointer transition-all text-neutral-100 text-lg`}
+                              size={40}
                             />
                           )}
                         </div>

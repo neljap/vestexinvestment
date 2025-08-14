@@ -44,7 +44,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-dashcont p-6 rounded-lg shadow-md">
         <h2 className="font-[600] text-neutral-100">Total Funds</h2>
-        <p className="text-neutral-100">$10,000</p>
+        <p className="text-neutral-100">${data ? Number(data?.tAmount).toLocaleString() : 0}</p>
         <div className="flex justify-start items-center mt-4 gap-4">
           <Link to="/user/deposit">
             <button className="bg-[#C6F4D6] px-4 py-2 shadow rounded-lg text-dashcont font-[600] font-[Jost]">Deposit</button>

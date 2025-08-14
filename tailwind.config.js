@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         referbg: "url('assets/og-image-yield.png')",
+      // 'dashImg': "url('https://res.cloudinary.com/dr6a80sph/image/upload/v1735421427/z5fkks4voa5nr7jz7jgr.jpg')"
       },
       colors: {
         dashbg: "#222736",

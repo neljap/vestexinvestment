@@ -24,31 +24,42 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, title, i
   );
 };
 
-const testimonials = [
-  {
+/*
+{
     quote: "This platform has revolutionized how we manage our projects. The collaboration features are top-notch!",
     name: "Jane Doe",
     title: "CEO, Tech Solutions",
     image: "/src/assets/undraw_professor-avatar_y9ai.svg", // Placeholder image
   },
+
+
+*/
+
+const testimonials = [
   {
-    quote: "An incredibly intuitive and powerful tool. Our team's productivity has soared since we started using it.",
-    name: "John Smith",
-    title: "Lead Developer, Innovate Co.",
-    image: "/src/assets/undraw_professor-avatar_y9ai.svg", // Placeholder image
-  },
-  {
-    quote: "Customer support is outstanding, and the features are exactly what we needed for our growing business.",
-    name: "Emily White",
-    title: "Operations Manager, Global Corp.",
-    image: "/src/assets/undraw_professor-avatar_y9ai.svg", // Placeholder image
-  },
-  {
-    quote: "The best investment we've made this year. It's streamlined our workflow and saved us countless hours.",
-    name: "Michael Brown",
-    title: "Founder, Creative Agency",
-    image: "/src/assets/undraw_professor-avatar_y9ai.svg", // Placeholder image
-  },
+      name: "Sophia Carter",
+      title: "Retiree",
+      quote: "I took a leap of faith and invested in this company a year ago, and I couldn't be happier. My returns have exceeded my expectations, and their customer service is always top-notch. Definitely worth the investment!",
+      image: "https://picsum.photos/101/101",
+    },
+    {
+      name: "Ethan Walker",
+      title: "Business Owner",
+      quote: "Honestly, I was skeptical at first, but after seeing the consistent growth in my portfolio, I’m sold. The team is knowledgeable and genuinely cares about your success. I’m looking forward to future investments with them.",
+      image: "https://picsum.photos/102/102",
+    },
+    {
+      name: "Olivia Davis",
+      title: "Entrepreneur",
+      quote: "After researching several options, I chose this company, and it’s been a game-changer. Their transparent communication and solid results have made me feel confident in my financial future. Highly recommend!",
+      image: "https://picsum.photos/104/104",
+    },
+    {
+      name: "Liam Thompson",
+      title: "Engineer",
+      quote:  "I’ve made some smart moves with this company. Their team is responsive, professional, and they really know what they’re doing. My investment has paid off, and I’m excited about what’s next.",
+      image: "https://picsum.photos/103/103",
+    },
 ];
 
 const TestimonialSection = () => {
