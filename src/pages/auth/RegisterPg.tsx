@@ -40,6 +40,7 @@ const RegisterPg = () => {
         toast.error("Password do not match, Try Again", {
           position: "bottom-left",
         });
+        return;
         setLoading(false);
       }
       //  else if(recapState == null){
@@ -53,21 +54,29 @@ const RegisterPg = () => {
           fullname,
           number,
         };
-        await axios.post(
+        let response = await axios.post(
           `${baseUrl}/register`,
           regdata
         );
-
+        if(response){
         toast.success("Registration Successfully, Login to Get Started", {
           position: "bottom-left",
         });
         navigate("/login");
         setLoading(false);
       }
+        
+      }
     } catch (error: any) {
+      console.log(`Error Reg: ${error.response.data}`)
       toast.error(error.code, { position: "bottom-left" });
     } finally {
       setLoading(false);
+      setEmail("");
+      setFullName("");
+      setNumber("");
+      setPassword("");
+      setPasswordConfirm("");
     }
   };
 
