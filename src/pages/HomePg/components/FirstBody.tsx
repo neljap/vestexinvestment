@@ -57,9 +57,9 @@ const FirstBody = () => {
     <div className="overflow-hidden">
       <Navbar AboutRef={scrollToAbout} ServicesRef={scrollToServices} PackagesRef={scrollToPack} TestimonialsRef={scrollToTesty} ContactRef={scrollToContact}/>
       <div id="about" ref={AboutRef}>
-            <div className="h-[75vh] bg-black text-neutral-100 ">
+            <div className="h-[100vh] md:h-[75vh] bg-black text-neutral-100 ">
                 <div className="container">
-                <div className="w-full md:w-2/3 justify-center items-center flex flex-col gap-4 pt-16 text-center font-[600] mx-auto">
+                <div className="w-full md:w-2/3 justify-center items-center flex flex-col gap-2 md:gap-4 pt-2 md:pt-16 text-center font-[600] mx-auto">
                 <h2 className="font-[Jost] text-lg md:text-3xl">Welcome to Vestex Investment – Your Trusted Partner in High-Yield Investments</h2>
 <p>At Vestexinvestment, we specialize in diversified asset trading, offering you a smarter way to grow your wealth. Our expertise spans across high-potential markets including real estate, Bitcoin and cryptocurrency trading, agriculture investment, and oil & gas ventures. Backed by a team of experienced analysts and traders, we strategically trade these assets on behalf of our investors to deliver consistent, high-yield returns.</p>
 
