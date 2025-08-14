@@ -106,7 +106,7 @@ const RegisterPg = () => {
               <label htmlFor="">Full Name</label>
               <input
                 type="text"
-                className="p-1 w-full rounded-lg border border-primary"
+                className="p-1 w-full rounded-lg border border-neutral-700 bg-dashbg text-neutral-100"
                 value={fullname}
                 onChange={(e: any) => setFullName(e.target.value)}
                 required
@@ -116,7 +116,7 @@ const RegisterPg = () => {
               <label htmlFor="">Email Address</label>
               <input
                 type="email"
-                className="p-1 w-full rounded-lg border border-primary"
+                className="p-1 w-full rounded-lg border border-neutral-700 bg-dashbg text-neutral-100"
                 value={email}
                 onChange={(e: any) => setEmail(e.target.value)}
                 required
@@ -126,7 +126,7 @@ const RegisterPg = () => {
               <label htmlFor="">Phone Number</label>
               <input
                 type="number"
-                className="p-1 w-full rounded-lg border border-primary"
+                className="p-1 w-full rounded-lg border border-neutral-700 bg-dashbg text-neutral-100"
                 value={number}
                 onChange={(e: any) => setNumber(e.target.value)}
                 required
@@ -136,7 +136,7 @@ const RegisterPg = () => {
               <label htmlFor="">Password</label>
               <input
                 type={visible ? "text" : "password"}
-                className="p-1 w-full rounded-lg border border-primary"
+                className="p-1 w-full rounded-lg border border-neutral-700 bg-dashbg text-neutral-100"
                 value={password}
                 onChange={(e: any) => setPassword(e.target.value)}
                 required
@@ -161,7 +161,7 @@ const RegisterPg = () => {
               <label htmlFor="">Confirm Password</label>
               <input
                 type={showPass ? "text" : "password"}
-                className="p-1 w-full rounded-lg border border-primary"
+                className="p-1 w-full rounded-lg border border-neutral-700 bg-dashbg text-neutral-100"
                 value={passwordConfirm}
                 onChange={(e: any) => setPasswordConfirm(e.target.value)}
                 required
