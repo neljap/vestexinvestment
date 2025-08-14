@@ -7,6 +7,7 @@ import Withdraw from "./Withdraw/Withdraw";
 import KycVerify from "./KycVerify/KycVerify";
 import KycData from "./KycVerify/KycData";
 import Settings from "./Settings/Settings";
+import Transactions from "./Transactions/Transactions";
 
 const UserPg = () => {
   return (
@@ -14,14 +15,15 @@ const UserPg = () => {
       <NavLinks>
 
           <Routes>
-            <Route path="/dashboard" element={<div className="pl-60"><Dashboard /></div>} />
+            <Route path="/dashboard" element={<div className="pl-0 md:pl-60"><Dashboard /></div>} />
             <Route path="/profile" element={<div>Profile</div>} />
-            <Route path="/settings" element={<div className="pl-60"><Settings /></div>} />
-            <Route path="/deposit" element={<div className="pl-60" ><Deposit /></div>} />
-            <Route path="/withdraw" element={<div className="pl-60"><Withdraw /></div>} />
-            <Route path="/kyc-verification" element={<div className="pl-60"><KycVerify /></div>} />
-            <Route path="/kyc-data" element={<div className="pl-60"><KycData /></div>} />
-            <Route path="/support" element={<Support />} />
+            <Route path="/settings" element={<div className="pl-0 md:pl-60"><Settings /></div>} />
+            <Route path="/wallet" element={<div className="pl-0 md:pl-60"><Transactions/></div>} />
+            <Route path="/deposit" element={<div className="pl-0 md:pl-60" ><Deposit /></div>} />
+            <Route path="/withdraw" element={<div className="pl-0 md:pl-60"><Withdraw /></div>} />
+            <Route path="/kyc-verification" element={<div className="pl-0 md:pl-60"><KycVerify /></div>} />
+            <Route path="/kyc-data" element={<div className="pl-0 md:pl-60"><KycData /></div>} />
+            <Route path="/support" element={<div className="pl-0 md:pl-60"><Support /></div>} />
           </Routes>
       </NavLinks>
   );

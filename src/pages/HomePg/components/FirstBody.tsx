@@ -6,31 +6,10 @@ import Footer from "./Footer";
 import { Testimony } from "./Testimony";
 import Navbar from "./Navbar";
 import { useRef } from "react";
+import { servicesItems } from "../../../utils";
 
 const FirstBody = () => {
-  const servicesItems = [
-    {
-      heading: "Dedicated 24 hours Customer Support",
-      text: "Our expert support team is available to assist you at every step — from onboarding to ongoing investment management."
-    },
-    {
-      heading: "Bank-Grade Security",
-      text: "Your data and assets are protected with industry-leading encryption, multi-layer authentication, and secure custody solutions."
-    },
-    {
-      heading: "Fully Regulated & Compliant",
-      text: "We operate under strict regulatory standards to ensure transparency, legal compliance, and investor protection."
-    },
-    {
-      heading: "Expert-Led Investment Insights",
-      text: "Our seasoned analysts and advisors provide data-driven strategies and market insights tailored to your goals."
-    },
-    {
-      heading: "Global Access, Local Expertise",
-      text: "We offer international investment opportunities with localized support and insights to suit your market preferences."
-    }
-  ]
-
+  
 // Package
   const PackRef = useRef<any>(null)
 
@@ -78,7 +57,7 @@ const FirstBody = () => {
     <div className="overflow-hidden">
       <Navbar AboutRef={scrollToAbout} ServicesRef={scrollToServices} PackagesRef={scrollToPack} TestimonialsRef={scrollToTesty} ContactRef={scrollToContact}/>
       <div id="about" ref={AboutRef}>
-           <div className="h-[100vh] bg-heroimgone bg-center bg-opacity-50 bg-cover flex justify-center items-center align-middle w-full ">
+            <div className="h-[100vh] bg-heroimgone bg-center bg-opacity-50 bg-cover flex justify-center items-center align-middle w-full ">
                 <div className="flex justify-center items-center backdrop-brightness-50 border-l-indigo-900 w-full h-full text-white">
                 <div className="md:w-2/3 w-full flex flex-col gap-4 justify-center items-center">
                   <h3 className="text-xl md:text-4xl text-center font-[Jost]">SECURE YOUR FUTURE WITH SMART REAL ESTATE INVESTMENT - HIGH RETURNS, ZERO RISK AND LASTING VALUE</h3>
@@ -192,12 +171,12 @@ Unlock consistent returns and long-term value by investing in high-performing ag
 
 
       {/* Services */}
-      <div id="services" ref={ServicesRef} >
+      <div className="bg-dashbg text-neutral-100" id="services" ref={ServicesRef} >
         <div className="container">
         <h3 className="py-6 text-2xl md:text-4xl font-[Jost] font-[600] text-center">Services</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-12 pt-4 pb-8">
           {servicesItems.map((item:any, index) => (
-           <div className="shadow rounded flex flex-col justify-start items-start p-6 gap-4 min-h-[300px] border-t-2 border-black" key={index}>
+           <div className="shadow rounded flex flex-col justify-start items-start p-6 gap-4 min-h-[300px] border-t-2 border-[#ededed] bg-dashcont" key={index}>
             <div><svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg></div>

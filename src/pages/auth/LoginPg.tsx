@@ -8,6 +8,7 @@ import axios from "axios";
 import { signInbro } from "../../assets";
 // import { hosturl } from "../../utils/ApiFeatures";
 import ReCAPTCHA from "react-google-recaptcha";
+import { baseUrl } from "../../utils";
 // import {ThreeDots} from "react-loader-spinner"
 
 const LoginPg = () => {
@@ -27,7 +28,7 @@ const LoginPg = () => {
   // Secret Key: 6Ld0eJ8rAAAAAFJBeXVJD-K5gGPMdKi83KO6A6KG
 
   useEffect(() => {
-    document.title = "Spectrum Capitals | Login"
+    document.title = "Vestex Investment | Login"
   }, [])
 
   const handleSubmit = async (e: any) => {
@@ -49,7 +50,7 @@ const LoginPg = () => {
     const formData = { email, password };
 
     await axios
-      .post("https://specserver.vercel.app/api/user/login", formData)
+      .post(`${baseUrl}/login`, formData)
       .then((res) => {
         Cookies.set("token", res.data.token, { expires: 7 });
         navigate("/user/dashboard");
@@ -65,10 +66,10 @@ const LoginPg = () => {
 
   return (
     <>
-    <div className="min-h-screen grid md:grid-cols-2 grid-cols-1 justify-between align-middle items-center">
+    <div className="min-h-screen grid md:grid-cols-2 grid-cols-1 justify-between align-middle items-center bg-dashbg text-neutral-100">
       <div className=" md:block hidden w-full h-full">
         <Link to="/">
-          <div className="py-2 px-4 shadow-lg flex flex-row justify-between rounded-lg w-28 mt-12 ml-6 align-middle bg-[#f1f1f1] dark:bg-[#1f2937] cursor-pointer">
+          <div className="py-2 px-4 shadow-lg flex flex-row justify-between rounded-lg w-28 mt-12 ml-6 align-middle cursor-pointer bg-dashcont hover:border-green-400 border">
             <FaArrowLeftLong
               size={24}
               className="dark:fill-[#f1f1f1] fill-[#1f2937]"
@@ -93,7 +94,7 @@ const LoginPg = () => {
 
           <form
             action=""
-            className="w-full px-10 shadow-2xl rounded-2xl p-12 bg-[#f1f1f1]"
+            className="w-full px-10 shadow-2xl rounded-2xl p-12 bg-dashcont text-neutral-100"
             onSubmit={handleSubmit}
           >
             <p className="text-sm pb-4">
@@ -104,7 +105,7 @@ const LoginPg = () => {
               <label htmlFor="">Email Address</label>
               <input
                 type="email"
-                className="p-2 w-full rounded-lg border border-primary"
+                className="p-2 w-full rounded-lg border border-neutral-200 bg-dashbg"
                 onChange={(e: any) => setEmail(e.target.value)}
               />
             </div>
@@ -112,7 +113,7 @@ const LoginPg = () => {
               <label htmlFor="">Password</label>
               <input
                 type={visible ? "text" : "password"}
-                className="p-2 w-full rounded-lg border border-primary"
+                className="p-2 w-full rounded-lg border border-neutral-200 bg-dashbg"
                 value={password}
                 onChange={(e: any) => setPassword(e.target.value)}
               />
@@ -138,7 +139,7 @@ const LoginPg = () => {
             <div className="flex flex-col gap-2 mt-1">
               <div>
                <button
-              className="bg-primary rounded-xl py-2 px-4 text-lg"
+              className="bg-green-600 rounded-xl py-2 px-4 text-lg"
               disabled={loading ? true : false}
             >
               {loading ? "Logging..." : "Login"}

@@ -9,7 +9,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, title, image }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 mx-4 flex flex-col items-center text-center">
+    <div className="bg-white rounded-lg shadow-lg p-4 mx-4 flex flex-col items-center text-center">
       
       <p className="text-lg text-gray-700 italic mb-6">"{quote}"</p>
       <div className="flex items-center gap-3 justify-center w-full">

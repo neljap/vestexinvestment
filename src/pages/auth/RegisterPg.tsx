@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import Asimg from "../../assets/Sign up-bro.svg";
 // import { hosturl } from "../../utils/ApiFeatures";
 import ReCAPTCHA from "react-google-recaptcha";
+import { baseUrl } from "../../utils";
 
 const RegisterPg = () => {
   const [email, setEmail] = useState("");
@@ -53,7 +54,7 @@ const RegisterPg = () => {
           number,
         };
         await axios.post(
-          "http://localhost:5000/api/users/register",
+          `${baseUrl}/register`,
           regdata
         );
 
@@ -72,13 +73,12 @@ const RegisterPg = () => {
 
   return (
     <>
-    <div className="min-h-screen grid md:grid-cols-2 grid-cols-1 justify-between align-middle items-center">
+    <div className="min-h-screen grid md:grid-cols-2 grid-cols-1 justify-between align-middle items-center bg-dashbg text-neutral-100">
       <div className="md:block hidden w-full h-full ">
         <Link to="/">
-          <div className="py-2 px-4 shadow-lg flex flex-row justify-between rounded-lg w-28 mt-12 ml-6 align-middle bg-[#f1f1f1]  cursor-pointer">
+          <div className="py-2 px-4 shadow-lg flex flex-row justify-between rounded-lg w-28 mt-12 ml-6 align-middle  cursor-pointer border hover:border-green-400 text-neutral-100">
             <FaArrowLeftLong
               size={24}
-              className="fill-[#1f2937]"
             />
             <p className="">Home</p>
           </div>
@@ -87,7 +87,7 @@ const RegisterPg = () => {
       </div>
       <div>
         <Link to="/" className=" md:hidden block">
-          <div className=" py-2 px-4 shadow-lg flex flex-row justify-between rounded-lg w-28 mt-12 ml-6 align-middle bg-[#f1f1f1]  cursor-pointer">
+          <div className=" py-2 px-4 shadow-lg flex flex-row justify-between rounded-lg w-28 mt-12 ml-6 align-middle bg-[#f1f1f1]  cursor-pointer ">
             <FaArrowLeftLong
               size={24}
               className="dark:fill-[#f1f1f1] fill-[#1f2937]"
@@ -99,7 +99,7 @@ const RegisterPg = () => {
         <div className="md:px-10 px-4">
           <form
             action=""
-            className="w-full px-8 shadow-2xl rounded-2xl py-8 bg-[#f1f1f1]"
+            className="w-full px-8 shadow-2xl rounded-2xl py-8 bg-dashcont text-neutral-100"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-1 py-1">
@@ -186,7 +186,7 @@ const RegisterPg = () => {
               <ReCAPTCHA sitekey="6LfSrWIqAAAAAAl5wjTLViZc_d0cDrHb9_V92smx" onChange={(val : any) => setRecapState(val)} />
             </div>
             <div className="flex flex-row justify-between align-middle items-center py-2 gap-2">
-              <button className="bg-primary rounded-xl py-2 px-4 text-lg">
+              <button className="bg-green-600 rounded-xl py-2 px-4 text-lg">
                 {loading ? "Registering" : "Register"}
               </button>
               <p className="text-sm">
