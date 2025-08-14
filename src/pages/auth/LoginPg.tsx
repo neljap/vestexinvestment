@@ -134,7 +134,7 @@ const LoginPg = () => {
               </div>
             </div>
             <div>
-              <ReCAPTCHA sitekey="6LfSrWIqAAAAAAl5wjTLViZc_d0cDrHb9_V92smx" onChange={(val : any) => setRecapState(val)} />
+              <ReCAPTCHA sitekey="6LeKDaYrAAAAAO4BjX-HruRldCOPN1Px8TyqeYnq" onChange={(val : any) => setRecapState(val)} />
             </div>
             <div className="flex flex-col gap-2 mt-1">
               <div>

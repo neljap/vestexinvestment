@@ -183,7 +183,7 @@ const RegisterPg = () => {
               </div>
             </div>
             <div>
-              <ReCAPTCHA sitekey="6LfSrWIqAAAAAAl5wjTLViZc_d0cDrHb9_V92smx" onChange={(val : any) => setRecapState(val)} />
+              <ReCAPTCHA sitekey="6LeKDaYrAAAAAO4BjX-HruRldCOPN1Px8TyqeYnq" onChange={(val : any) => setRecapState(val)} />
             </div>
             <div className="flex flex-row justify-between align-middle items-center py-2 gap-2">
               <button className="bg-green-600 rounded-xl py-2 px-4 text-lg">
