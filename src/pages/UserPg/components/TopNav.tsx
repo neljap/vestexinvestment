@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const TopNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavMenu, setShowNavMenu] = useState(false);
+  const [logoutModal, setLogoutModal] = useState<any>(false);
   const togNavMenu = () => {  
   setShowNavMenu(!showNavMenu);
   }
@@ -96,7 +97,7 @@ const TopNav = () => {
                           )}
                         </div>
       </div>
-      {        showNavMenu && <UserRespNav setLogoutModal="" setShowNavMenu={setShowNavMenu} showNavMenu={showNavMenu}/>}
+      {        showNavMenu && <UserRespNav  setShowNavMenu={setShowNavMenu} showNavMenu={showNavMenu} logoutModal={logoutModal} setLogoutModal={setLogoutModal}/>}
       {isOpen && <UserDropDown />}
     </>
   );

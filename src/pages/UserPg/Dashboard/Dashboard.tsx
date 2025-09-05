@@ -5,17 +5,40 @@ import TestScroll from "../components/TestScroll";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserFooter from "../components/UserFooter";
 import SpinnerLoading from "../../HomePg/components/SpinnerLoading";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
+import { FaPowerOff } from "react-icons/fa6";
 
 const Dashboard = () => {
   const {data} = useContext(AuthContext);
  const [loading, setLoading] = useState(true)
+ const navigate = useNavigate();
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 2000)
   }, [])
+
+  const logOutFunc = () => {
+    try {
+      Cookies.remove("token");
+      // setLogoutModal(false);
+      navigate("/");
+      toast.success("Log Out Successfully", {
+        position: "bottom-left",
+        className: "font-[Jost]",
+      });
+    } catch (err: any) {
+      toast.error(err.code, {
+        position: "bottom-left",
+        className: "font-[Jost]",
+      });
+    }
+  };
 
   return (
     <div>
@@ -80,6 +103,14 @@ const Dashboard = () => {
         <h2 className="font-[600] text-neutral-100 mb-4">Cryptocurrency Prices</h2>
         <iframe className="w-full h-[400px] bg-black" src="https://www.tradingview-widget.com/embed-widget/crypto-mkt-screener/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A%22100%25%22%2C%22defaultColumn%22%3A%22overview%22%2C%22screener_type%22%3A%22crypto_mkt%22%2C%22displayCurrency%22%3A%22USD%22%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Atrue%2C%22market%22%3A%22crypto%22%2C%22enableScrolling%22%3Atrue%2C%22utm_source%22%3A%22account.deepmargins.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22cryptomktscreener%22%2C%22page-uri%22%3A%22account.deepmargins.com%2Fmy-wallet%22%7D" ></iframe>
     </div> 
+    </div>
+    <div className="flex justify-between items-center py-2">
+
+      <div className="flex items-center gap-1 pr-4">
+        <FaPowerOff size={24} color="red" className="cursor-pointer" onClick={logOutFunc}/>
+        <p>Log Out</p>
+      </div>
+      <div></div>
     </div>
     <UserFooter />
     </div>

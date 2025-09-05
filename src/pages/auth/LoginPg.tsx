@@ -8,7 +8,7 @@ import axios from "axios";
 import { signInbro } from "../../assets";
 // import { hosturl } from "../../utils/ApiFeatures";
 // import ReCAPTCHA from "react-google-recaptcha";
-import { baseUrl } from "../../utils";
+// import { baseUrl } from "../../utils";
 // import {ThreeDots} from "react-loader-spinner"
 
 const LoginPg = () => {
@@ -18,7 +18,7 @@ const LoginPg = () => {
   const [loading, setLoading] = useState(false);
   // const [isRecapVerify, setIsRecapVerify] = useState(false)
   const navigate = useNavigate();
-  // const handleRecapChange = (value) => {
+  // const handleRecapChange = (value: any) => {
   //   setIsRecapVerify(true)
   // }
   // const [loadingSpin, setLoadingSpin] = useState(true);
@@ -50,15 +50,16 @@ const LoginPg = () => {
     const formData = { email, password };
 
     await axios
-      .post(`${baseUrl}/login`, formData)
+      .post("https://vestexinvserver.vercel.app/api/users/login", formData, { headers: { "Content-Type": "application/json" } })
       .then((res) => {
         Cookies.set("token", res.data.token, { expires: 7 });
         navigate("/user/dashboard");
         window.location.reload();
         toast.success("Login Successfully", { position: "bottom-left" });
+
       })
       .catch((err) => {
-        toast.error(err.message, { position: "bottom-left" });
+        toast.error(err.code, { position: "bottom-left" });
         setLoading(false);
       })
       .finally(() => setLoading(false));

@@ -329,7 +329,7 @@ const DepositPg = () => {
             </div>
             {cryptModal && (
               <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-                <div className="max-w-[500px] relative rounded-xl h-fit p-6 text-neutral-100 bg-[#1f2937] flex flex-col justify-center items-center gap-8">
+                <div className="max-w-[500px] relative rounded-xl h-fit p-6 text-neutral-100 bg-[#1f2937] flex flex-col justify-center items-center gap-8 z-50">
                   <div
                     className="absolute  top-3 right-6 cursor-pointer"
                     onClick={() => setCryptModal(false)}

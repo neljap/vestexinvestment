@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { FaPowerOff } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
@@ -5,15 +6,40 @@ interface navMenuTypes {
     showNavMenu: any,
     setShowNavMenu: any
     setLogoutModal: any
+    logoutModal: any
 }
 
-const UserRespNav = ({showNavMenu, setShowNavMenu, setLogoutModal}: navMenuTypes) => {
+
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+const UserRespNav = ({showNavMenu, setShowNavMenu}: navMenuTypes) => {
+  const [logoutModal, setLogoutModal] = useState<any>(false);
+
+  const navigate = useNavigate();
+
+  const logOutFunc = () => {
+    try {
+      Cookies.remove("token");
+      setLogoutModal(false);
+      navigate("/");
+      toast.success("Log Out Successfully", {
+        position: "bottom-left",
+        className: "font-[Jost]",
+      });
+    } catch (err: any) {
+      toast.error(err.code, {
+        position: "bottom-left",
+        className: "font-[Jost]",
+      });
+    }
+  };
 
     let activeLink =
     "flex flex-row gap-3 w-full py-3 ps-4 justify-start items-center bg-blue-200 text-[#0052FF] rounded-tl-xl  rounded-bl-xl border-r-4 border-primary mt-2";
 
   let normalLink =
-    "flex flex-row gap-3 w-full py-3 ps-4 justify-start items-center hover:bg-blue-50 rounded-tl-xl rounded-bl-xl text-neutral-500 mt-2";
+    "flex flex-row gap-3 w-full py-3 ps-4 justify-start items-center hover:bg-blue-50 rounded-tl-xl rounded-bl-xl text-neutral-100 mt-2";
 
     let menuItem = [    
         {
@@ -22,8 +48,8 @@ const UserRespNav = ({showNavMenu, setShowNavMenu, setLogoutModal}: navMenuTypes
             icon: "🏠"
         },
         {
-            name: "Transactions", 
-            path: "/user/transactions",
+            name: "Wallet", 
+            path: "/user/wallet",
             icon: "💰"
         },
         {
@@ -61,17 +87,38 @@ const UserRespNav = ({showNavMenu, setShowNavMenu, setLogoutModal}: navMenuTypes
             {menuItem.map((item, index) => (
                 <NavLink to={item.path} key={index} className={({isActive}) => isActive ? activeLink : normalLink} onClick={() => window.scrollTo(0, 0)}>
                     <div className="icon">{item.icon}</div>
-              <span className="font-[600] font-[Jost]  text-gray-600">
+              <span className="font-[600] font-[Jost]">
                 {item.name}
               </span>
                 </NavLink>
             ))}
             </nav>
             <div className="flex gap-3 ps-3 cursor-pointer" onClick={() => setLogoutModal(true)}>
-                        <FaPowerOff size={24} color="black"/>
-                        <p className=" font-[600] font-[Jost] text-neutral-500">Logout</p>
+                        <FaPowerOff size={24} color="red"/>
+                        <p className=" font-[600] font-[Jost] text-neutral-200">Logout</p>
                       </div>
         </div>
+        {logoutModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+            <div className="w-80 rounded-xl h-40 bg-[#f1f1f1] dark:bg-[#1f2937] flex flex-col justify-center items-center gap-8">
+              <p>Are you sure you want to Log Out?</p>
+              <div className="flex justify-between items-center px-8 gap-4">
+                <button
+                  className="bg-green-400 px-4 py-2 rounded-xl"
+                  onClick={logOutFunc}
+                >
+                  Yes
+                </button>
+                <button
+                  className="bg-red-500 px-4 py-2 rounded-xl"
+                  onClick={() => setLogoutModal(false)}
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
     </div>
   )
 }
