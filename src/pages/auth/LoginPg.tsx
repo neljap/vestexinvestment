@@ -6,6 +6,8 @@ import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { signInbro } from "../../assets";
+// import { GoogleLogin, googleLogout } from "@react-oauth/google";
+// import {jwtDecode} from "jwt-decode";
 // import { hosturl } from "../../utils/ApiFeatures";
 // import ReCAPTCHA from "react-google-recaptcha";
 // import { baseUrl } from "../../utils";
@@ -16,6 +18,7 @@ const LoginPg = () => {
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+
   // const [isRecapVerify, setIsRecapVerify] = useState(false)
   const navigate = useNavigate();
   // const handleRecapChange = (value: any) => {
@@ -26,6 +29,7 @@ const LoginPg = () => {
 
   // Site Key: 6Ld0eJ8rAAAAADUUC_gy1tmnwLo6zPVEKMKYhx8K
   // Secret Key: 6Ld0eJ8rAAAAAFJBeXVJD-K5gGPMdKi83KO6A6KG
+
 
   useEffect(() => {
     document.title = "Vestex Investment | Login"
@@ -50,7 +54,7 @@ const LoginPg = () => {
     const formData = { email, password };
 
     await axios
-      .post("https://vestexinvserver.vercel.app/api/users/login", formData, { headers: { "Content-Type": "application/json" } })
+      .post("https://richitex.vercel.app/api/users/login", formData, { headers: { "Content-Type": "application/json" } })
       .then((res) => {
         Cookies.set("token", res.data.token, { expires: 7 });
         navigate("/user/dashboard");
@@ -137,7 +141,7 @@ const LoginPg = () => {
             <div>
               {/* <ReCAPTCHA sitekey="6LeKDaYrAAAAAO4BjX-HruRldCOPN1Px8TyqeYnq" onChange={(val : any) => setRecapState(val)} /> */}
             </div>
-            <div className="flex flex-col gap-2 mt-1">
+            <div className="flex justify-between items-center py-1 gap-2 mt-1">
               <div>
                <button
               className="bg-green-600 rounded-xl py-2 px-4 text-lg"
@@ -151,7 +155,23 @@ const LoginPg = () => {
               <Link to="/forgot-password" className="text-primary">Forgot your password?</Link>
             </p> 
             </div>
-            
+            {/* <div className="w-full md:w-1/2">
+              <GoogleLogin
+  onSuccess={credentialResponse => {
+    // @ts-ignore
+    let respondecoded = jwtDecode(credentialResponse.credential)
+    console.log(credentialResponse);
+    console.log(respondecoded);
+    // @ts-ignore
+    setGoogleEmail(respondecoded.email)
+    console.log(googleEmail)
+   
+  }}
+  onError={() => {
+    console.log('Login Failed')
+  }}
+/>;
+            </div> */}
           </form>
         </div>
       </div>

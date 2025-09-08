@@ -7,7 +7,6 @@ import { toast } from "react-hot-toast";
 import Asimg from "../../assets/Sign up-bro.svg";
 // import { hosturl } from "../../utils/ApiFeatures";
 // import ReCAPTCHA from "react-google-recaptcha";
-import { baseUrl } from "../../utils";
 
 const RegisterPg = () => {
   const [email, setEmail] = useState("");
@@ -54,8 +53,9 @@ const RegisterPg = () => {
           fullname,
           number,
         };
+        console.log(regdata, "regdata")
         let response = await axios.post(
-          `${baseUrl}/register`,
+          "https://richitex.vercel.app/api/users/register",
           regdata
         );
         if(response){
@@ -72,11 +72,11 @@ const RegisterPg = () => {
       toast.error(error.code, { position: "bottom-left" });
     } finally {
       setLoading(false);
-      setEmail("");
-      setFullName("");
-      setNumber("");
-      setPassword("");
-      setPasswordConfirm("");
+      // setEmail("");
+      // setFullName("");
+      // setNumber("");
+      // setPassword("");
+      // setPasswordConfirm("");
     }
   };
 
