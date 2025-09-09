@@ -51,7 +51,7 @@ const NavLinks = ({ children }: any) => {
     try {
       Cookies.remove("token");
       setLogoutModal(false);
-      navigate("/");
+      navigate("/login");
       toast.success("Log Out Successfully", {
         position: "bottom-left",
         className: "font-[Jost]",
